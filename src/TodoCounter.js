@@ -1,6 +1,13 @@
-function TodoCounter() {
+import React from "react";
+
+function TodoCounter({ completed, total }) {
   return (
-    <h1>Haz Completado 3 de 5 TODOS</h1>
+    <React.Fragment>
+      <h1>
+        Haz completado {completed} de {total}
+      </h1>
+      <h2>subtitulo</h2>
+    </React.Fragment>
   );
 }
 

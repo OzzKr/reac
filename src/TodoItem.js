@@ -1,11 +1,12 @@
-function TodoItem() {
-    return (
-        <li>
-            <span>V</span>
-            <p>Llorar con la Llorona</p>
-            <span>X</span>
-        </li>
-    )
+function TodoItem(props) {
+  return (
+    <li>
+      <span>V</span>
+      <p>{props.text}</p>
+      <p>{props.completed}</p>
+      <span>X</span>
+    </li>
+  );
 }
 
 export { TodoItem };
