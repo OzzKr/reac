@@ -1,11 +1,12 @@
 import logo from "./platzi.webp";
 // import "./App.css";
-import { TodoCounter } from "./TodoCounter";
-import { TodoSearch } from "./TodoSearch";
-import { ButtonCreateTodo } from "./ButtonCreateTodo";
-import { TodoList } from "./TodoList";
-import { TodoItem } from "./TodoItem";
-import { ButtonSearchTodo } from "./ButtonSearchTodo";
+import "./css/TodoApp.css";
+import { TodoCounter } from "./Todo/TodoCounter";
+import { TodoSearch } from "./Todo/TodoSearch";
+import { ButtonCreateTodo } from "./Todo/ButtonCreateTodo";
+import { TodoList } from "./Todo/TodoList";
+import { TodoItem } from "./Todo/TodoItem";
+import { ButtonSearchTodo } from "./Todo/ButtonSearchTodo";
 import React from "react";
 
 const defautlTodos = [
