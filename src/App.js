@@ -1,28 +1,25 @@
-import logo from "./platzi.webp";
-// import "./App.css";
-import "./css/TodoApp.css";
-import { TodoCounter } from "./Todo/TodoCounter";
-import { TodoSearch } from "./Todo/TodoSearch";
-import { ButtonCreateTodo } from "./Todo/ButtonCreateTodo";
-import { TodoList } from "./Todo/TodoList";
-import { TodoItem } from "./Todo/TodoItem";
-import { ButtonSearchTodo } from "./Todo/ButtonSearchTodo";
-import React from "react";
+import React from 'react';
+import { TodoCounter } from './TodoCounter';
+import { TodoSearch } from './TodoSearch';
+import { TodoList } from './TodoList';
+import { TodoItem } from './TodoItem';
+import { CreateTodoButton } from './CreateTodoButton';
 
-const defautlTodos = [
-  { text: "curso1", completed: true },
-  { text: "curso2", completed: false },
-  { text: "curso3", completed: true },
-  { text: "curso4", completed: true },
+const defaultTodos = [
+  { text: 'Cortar cebolla', completed: true },
+  { text: 'Tomar el Curso de Intro a React.js', completed: false },
+  { text: 'Llorar con la Llorona', completed: false },
+  { text: 'LALALALALA', completed: false },
 ];
 
 function App() {
   return (
-    <React.Fragment>
-      <TodoCounter completed="5" total="10" />
+    <>
+      <TodoCounter completed={16} total={25} />
       <TodoSearch />
+
       <TodoList>
-        {defautlTodos.map((todo) => (
+        {defaultTodos.map(todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -30,9 +27,9 @@ function App() {
           />
         ))}
       </TodoList>
-      <ButtonCreateTodo />
-      <ButtonSearchTodo />
-    </React.Fragment>
+      
+      <CreateTodoButton />
+    </>
   );
 }
 
