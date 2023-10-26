@@ -1,15 +1,15 @@
-import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
+import React from "react";
+import { TodoCounter } from "./TodoCounter";
+import { TodoSearch } from "./TodoSearch";
+import { TodoList } from "./TodoList";
+import { TodoItem } from "./TodoItem";
+import { CreateTodoButton } from "./CreateTodoButton";
 
 const defaultTodos = [
-  { text: 'estudiar algorythms', completed: true},
-  { text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { text: 'tarea 3 tarea 3', completed: false },
-  { text: 'tarea 4 completed true :)', completed: true},
+  { text: "Algorithms", completed: true },
+  { text: "Frontend React", completed: false },
+  { text: "Backend compiled", completed: false },
+  { text: "JavaScript", completed: false },
 ];
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <TodoSearch />
 
       <TodoList>
-        {defaultTodos.map(todo => (
+        {defaultTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -27,7 +27,7 @@ function App() {
           />
         ))}
       </TodoList>
-      
+
       <CreateTodoButton />
     </>
   );
