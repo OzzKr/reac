@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/reac/static/css/main.5aaacaa4.css",
-    "main.js": "/reac/static/js/main.7fcbc727.js",
-    "static/media/platzi.webp": "/reac/static/media/platzi.5b31ce99c22184cfdc82.webp",
+    "main.css": "/reac/static/css/main.b082d371.css",
+    "main.js": "/reac/static/js/main.3cc06926.js",
     "index.html": "/reac/index.html",
-    "main.5aaacaa4.css.map": "/reac/static/css/main.5aaacaa4.css.map",
-    "main.7fcbc727.js.map": "/reac/static/js/main.7fcbc727.js.map"
+    "main.b082d371.css.map": "/reac/static/css/main.b082d371.css.map",
+    "main.3cc06926.js.map": "/reac/static/js/main.3cc06926.js.map"
   },
   "entrypoints": [
-    "static/css/main.5aaacaa4.css",
-    "static/js/main.7fcbc727.js"
+    "static/css/main.b082d371.css",
+    "static/js/main.3cc06926.js"
   ]
 }
