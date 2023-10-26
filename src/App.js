@@ -9,13 +9,8 @@ const defaultTodos = [
   { text: "Algorithms", completed: true },
   { text: "Frontend React", completed: false },
   { text: "Backend compiled", completed: false },
-  { text: "Backend compiled", completed: false },
-  { text: "Backend compiled", completed: false },
-  { text: "Backend compiled", completed: false },
   { text: "JavaScript", completed: false },
-  { text: "JavaScript", completed: true },
-  { text: "JavaScript", completed: false },
-  { text: "JavaScript", completed: true },
+  { text: "Grabar Canción Guitarra", completed: false },
 ];
 
 function App() {
@@ -28,12 +23,19 @@ function App() {
 
   console.log("the user search for:", SearchValue);
 
+  const searchedTodos = todoItems.filter((todo) => {
+    const todotoSearch = SearchValue.toLocaleLowerCase();
+    const todoFinder = todo.text.toLowerCase();
+    const todoFinded = todoFinder.includes(todotoSearch);
+    return todoFinded;
+  });
+
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoSearch SearchValue={SearchValue} setSearchValue={setSearchValue} />
       <TodoList>
-        {todoItems.map((todo) => (
+        {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
