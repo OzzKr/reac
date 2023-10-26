@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TodoSearch.css";
 
-const [state, setState] = React.useState();
-
-function TodoSearch() {
+function TodoSearch({ SearchValue, setSearchValue }) {
   return (
     <input
-      onChange={(event) => console.log(event.target.value)}
+      value={SearchValue}
+      onChange={(event) => setSearchValue(event.target.value)}
       placeholder="search ToDo Item here"
       className="TodoSearch"
     />

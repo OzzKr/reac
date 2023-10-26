@@ -9,17 +9,31 @@ const defaultTodos = [
   { text: "Algorithms", completed: true },
   { text: "Frontend React", completed: false },
   { text: "Backend compiled", completed: false },
+  { text: "Backend compiled", completed: false },
+  { text: "Backend compiled", completed: false },
+  { text: "Backend compiled", completed: false },
   { text: "JavaScript", completed: false },
+  { text: "JavaScript", completed: true },
+  { text: "JavaScript", completed: false },
+  { text: "JavaScript", completed: true },
 ];
 
 function App() {
+  const [SearchValue, setSearchValue] = React.useState("");
+  const [todoItems, setTodoItems] = React.useState(defaultTodos);
+
+  let completedTodos = todoItems.filter((todo) => !!todo.completed).length;
+
+  let totalTodos = todoItems.length;
+
+  console.log("the user search for:", SearchValue);
+
   return (
     <>
-      <TodoCounter completed={16} total={25} />
-      <TodoSearch />
-
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch SearchValue={SearchValue} setSearchValue={setSearchValue} />
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {todoItems.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -27,7 +41,6 @@ function App() {
           />
         ))}
       </TodoList>
-
       <CreateTodoButton />
     </>
   );
