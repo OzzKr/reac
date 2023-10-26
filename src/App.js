@@ -6,10 +6,10 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 
 const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true },
+  { text: 'estudiar algorythms', completed: true},
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { text: 'Llorar con la Llorona', completed: false },
-  { text: 'LALALALALA', completed: false },
+  { text: 'tarea 3 tarea 3', completed: false },
+  { text: 'tarea 4 completed true :)', completed: true},
 ];
 
 function App() {
