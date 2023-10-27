@@ -21,8 +21,6 @@ function App() {
 
   let totalTodos = todoItems.length;
 
-  // console.log("the user search for:", SearchValue);
-
   const searchedTodos = todoItems.filter((todo) => {
     const todotoSearch = SearchValue.toLocaleLowerCase();
     const todoFinder = todo.text.toLowerCase();
@@ -31,7 +29,6 @@ function App() {
   });
 
   const completeTodo = (text) => {
-    // console.log("completeTodo");
     const newTodos = [...todoItems];
 
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -42,21 +39,10 @@ function App() {
     setTodoItems(newTodos);
   };
 
-  // const completeTodo = (text) => {
-  //   console.log("completeTodo");
-  //   const newTodos = [...todoItems];
-
-  //   const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-  //   newTodos[todoIndex].completed = true;
-  //   setTodoItems(newTodos);
-  // };
-
   const deleteTodo = (text) => {
-    // console.log("deleteTodo");
     const newTodos = [...todoItems];
 
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
-    // console.log(todoIndex);
 
     newTodos.pop(todoIndex);
     setTodoItems(newTodos);
