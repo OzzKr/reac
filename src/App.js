@@ -21,7 +21,7 @@ function App() {
 
   let totalTodos = todoItems.length;
 
-  console.log("the user search for:", SearchValue);
+  // console.log("the user search for:", SearchValue);
 
   const searchedTodos = todoItems.filter((todo) => {
     const todotoSearch = SearchValue.toLocaleLowerCase();
@@ -29,6 +29,38 @@ function App() {
     const todoFinded = todoFinder.includes(todotoSearch);
     return todoFinded;
   });
+
+  const completeTodo = (text) => {
+    // console.log("completeTodo");
+    const newTodos = [...todoItems];
+
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+
+    newTodos[todoIndex].completed = newTodos[todoIndex].completed
+      ? false
+      : true;
+    setTodoItems(newTodos);
+  };
+
+  // const completeTodo = (text) => {
+  //   console.log("completeTodo");
+  //   const newTodos = [...todoItems];
+
+  //   const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+  //   newTodos[todoIndex].completed = true;
+  //   setTodoItems(newTodos);
+  // };
+
+  const deleteTodo = (text) => {
+    // console.log("deleteTodo");
+    const newTodos = [...todoItems];
+
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    // console.log(todoIndex);
+
+    newTodos.pop(todoIndex);
+    setTodoItems(newTodos);
+  };
 
   return (
     <>
@@ -40,6 +72,8 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
