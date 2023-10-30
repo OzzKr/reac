@@ -29,6 +29,7 @@ function App() {
   });
 
   const completeTodo = (text) => {
+
     const newTodos = [...todoItems];
 
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -42,11 +43,12 @@ function App() {
   const deleteTodo = (text) => {
     const newTodos = [...todoItems];
 
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex((todo) => todo.text.toLowerCase() === text.toLowerCase());
 
-    newTodos.pop(todoIndex);
+    newTodos.splice(todoIndex,1);
     setTodoItems(newTodos);
   };
+
 
   return (
     <>
