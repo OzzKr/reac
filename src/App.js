@@ -5,17 +5,38 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 
-const defaultTodos = [
-  { text: "Algorithms", completed: true },
-  { text: "Frontend React", completed: false },
-  { text: "Backend compiled", completed: false },
-  { text: "JavaScript", completed: false },
-  { text: "Grabar Canción Guitarra", completed: false },
-];
+// const defaultTodos = [
+//   { text: "Algorithms", completed: true },
+//   { text: "Frontend React", completed: false },
+//   { text: "Backend compiled", completed: false },
+//   { text: "JavaScript", completed: false },
+//   { text: "Grabar Canción Guitarra", completed: false },
+// ];
+
+// localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
+
+// localStorage.removeItem("TODOS_V1");
 
 function App() {
+  // console.log("function app");
+
+  let localTodos = localStorage.getItem("TODOS_V1");
+  // console.log(localTodos);
+
+  if (!localTodos) {
+    const defaultTodos = [];
+
+    localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
+    localTodos = localStorage.getItem("TODOS_V1");
+  }
+
+  let parsedTodos = JSON.parse(localTodos);
+  // console.log(parsedTodos);
+
+  const [todoItems, setTodoItems] = React.useState(parsedTodos);
+
+  // const [todoItems, setTodoItems] = React.useState(defaultTodos);
   const [SearchValue, setSearchValue] = React.useState("");
-  const [todoItems, setTodoItems] = React.useState(defaultTodos);
 
   let completedTodos = todoItems.filter((todo) => !!todo.completed).length;
 
@@ -29,7 +50,6 @@ function App() {
   });
 
   const completeTodo = (text) => {
-
     const newTodos = [...todoItems];
 
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -37,18 +57,24 @@ function App() {
     newTodos[todoIndex].completed = newTodos[todoIndex].completed
       ? false
       : true;
-    setTodoItems(newTodos);
+    saveTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todoItems];
 
-    const todoIndex = newTodos.findIndex((todo) => todo.text.toLowerCase() === text.toLowerCase());
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text.toLowerCase() === text.toLowerCase()
+    );
 
-    newTodos.splice(todoIndex,1);
-    setTodoItems(newTodos);
+    newTodos.splice(todoIndex, 1);
+    saveTodos(newTodos);
   };
 
+  const saveTodos = (newTodos) => {
+    setTodoItems(newTodos);
+    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
+  };
 
   return (
     <>
