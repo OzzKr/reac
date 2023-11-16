@@ -5,15 +5,15 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 
-// const defaultTodos = [
-//   { text: "Algorithms", completed: true },
-//   { text: "Frontend React", completed: false },
-//   { text: "Backend compiled", completed: false },
-//   { text: "JavaScript", completed: false },
-//   { text: "Grabar Canción Guitarra", completed: false },
-// ];
+const defaultTodos = [
+  { text: "Algorithms", completed: true },
+  { text: "Frontend React", completed: false },
+  { text: "Backend compiled", completed: false },
+  { text: "JavaScript", completed: false },
+  { text: "Grabar Canción Guitarra", completed: false },
+];
 
-// localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
+ localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
 
 // localStorage.removeItem("TODOS_V1");
 
